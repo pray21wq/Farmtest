@@ -10,7 +10,7 @@ spawn(function()
     end
 end)
 _G.Auto_Farm = true -- true / false
--- luxury tween service 385
+
 function totarget(p)
     local Distance2 = (p.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     local tween_s = game:service"TweenService"
@@ -55,6 +55,14 @@ function checklevel()
         QuestNumber = 1
         CFrameQuest = CFrame.new(-1138, 5, 3832)
         CFrameMon = CFrame.new(-1201, 5, 3910)
+        CFramePuk = CFrame.new(-1151, 44, 3874)
+    elseif lv == 40 or lv <= 59 then
+        Mon = "Brute [Lv. 45]"
+        Title = "Brute"
+        QuestName = "BuggyQuest1"
+        QuestNumber = 2
+        CFrameQuest = CFrame.new(-1138, 5, 3832)
+        CFrameMon = CFrame.new(-1387.5324707031, 24.592035293579, 4100.9575195313)
         CFramePuk = CFrame.new(-1151, 44, 3874)
     end
 end
