@@ -10,11 +10,11 @@ spawn(function()
     end
 end)
 _G.Auto_Farm = true -- true / false
-
+-- luxury tween service 385
 function totarget(p)
     local Distance2 = (p.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     local tween_s = game:service"TweenService"
-    local info = TweenInfo.new(Distance2/350, Enum.EasingStyle.Linear)
+    local info = TweenInfo.new(Distance2/385, Enum.EasingStyle.Linear)
     local tween = tween_s:Create(game:GetService("Players").LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = p})
     tween:Play()
     if Distance2 <= 75 then
