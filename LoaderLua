@@ -64,6 +64,22 @@ function checklevel()
         CFrameQuest = CFrame.new(-1138, 5, 3832)
         CFrameMon = CFrame.new(-1387.5324707031, 24.592035293579, 4100.9575195313)
         CFramePuk = CFrame.new(-1151, 44, 3874)
+    elseif lv == 60 or lv <= 74 then
+        Mon = "Desert Bandit [Lv. 60]"
+        Title = "Desert Bandit"
+        QuestName = "DesertQuest"
+        QuestNumber = 1
+        CFrameQuest = CFrame.new(896.51721191406, 6.4384617805481, 4390.1494140625)
+        CFrameMon = CFrame.new(984.99896240234, 16.109552383423, 4417.91015625)
+        CFramePuk = CFrame.new(896.51721191406, 6.4384617805481, 4390.1494140625)
+    elseif lv == 75 or lv <= 89 then
+        Mon = "Desert Officer [Lv. 70]"
+        Title = "Desert Officer"
+        QuestName = "DesertQuest"
+        QuestNumber = 2
+        CFrameQuest = CFrame.new(896.51721191406, 6.4384617805481, 4390.1494140625)
+        CFrameMon = CFrame.new(1547.1510009766, 14.452038764954, 4381.8002929688)
+        CFramePuk = CFrame.new(1547.1510009766, 14.452038764954, 4381.8002929688)
     end
 end
 
