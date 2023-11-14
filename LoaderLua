@@ -330,7 +330,7 @@ task.spawn(function()
     local AttackCD = 0.01
     local Controller
     local lastFireValid = 0
-    local MaxLag = 1000
+    local MaxLag = 350
     fucker = 0.08
     TryLag = 0.01
 
@@ -474,4 +474,8 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
-end
+end 
+-- Blox fruit source code lua
+--[[
+    end 
+    ]]
