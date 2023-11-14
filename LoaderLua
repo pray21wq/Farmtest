@@ -1,3 +1,16 @@
+local function callback(Text)
+end
+ 
+local NotificationBindable = Instance.new("BindableFunction")
+NotificationBindable.OnInvoke = callback
+ 
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Luxury hub";
+    Text = "Kaitan Mode Load";
+    Duration = "10";
+    Callback = NotificationBindable;
+})
+wait(10)
 spawn(function()
     while wait(1) do
 		pcall(function()
@@ -80,6 +93,23 @@ function checklevel()
         CFrameQuest = CFrame.new(896.51721191406, 6.4384617805481, 4390.1494140625)
         CFrameMon = CFrame.new(1547.1510009766, 14.452038764954, 4381.8002929688)
         CFramePuk = CFrame.new(1547.1510009766, 14.452038764954, 4381.8002929688)
+    elseif lv == 90 or lv <= 99 then
+        Mon = "Snow Bandit [Lv. 90]"
+        Title = "Snow Bandit"
+        QuestName = "SnowQuest"
+        QuestNumber = 1
+        CFrameQuest = CFrame.new(1386.8073730469, 87.272789001465, -1298.3576660156)
+        CFrameMon = CFrame.new(1356.3028564453, 105.76865386963, -1328.2418212891)
+        CFramePuk = CFrame.new(1386.8073730469, 87.272789001465, -1298.3576660156)
+    elseif lv == 100 or lv <= 129 then
+        Mon = "Snowman [Lv. 100]"
+        Title = "Snowman"
+        QuestName = "SnowQuest"
+        QuestNumber = 2
+        CFrameQuest = CFrame.new(1386.8073730469, 87.272789001465, -1298.3576660156)
+        CFrameMon = CFrame.new(1218.7956542969, 138.01184082031, -1488.0262451172)
+        CFramePuk = CFrame.new(1218.7956542969, 138.01184082031, -1488.0262451172)
+
     end
 end
 
@@ -327,17 +357,17 @@ task.spawn(function()
     local RigEvent = game:GetService("ReplicatedStorage").RigControllerEvent
     local Animation = Instance.new("Animation")
     local RecentlyFired = 0
-    local AttackCD = 0.01
+    local AttackCD = 0
     local Controller
     local lastFireValid = 0
     local MaxLag = 350
-    fucker = 0.08
-    TryLag = 0.01
+    fucker = 0.07
+    TryLag = 0
 
     local resetCD = function()
         local WeaponName = Controller.currentWeaponModel.Name
         local Cooldown = {
-            combat = 0.01
+            combat = 0.07
         }
         AttackCD = tick() + (fucker and Cooldown[WeaponName:lower()] or fucker or 0.285) + ((TryLag / MaxLag) * 0.3)
         RigEvent.FireServer(RigEvent, "weaponChange", WeaponName)
@@ -390,7 +420,7 @@ task.spawn(function()
                     end
                     if tick() - lastFireValid > 0.5 or not getgenv().Settings.FastAttack then
                         Controller.timeToNextAttack = 0
-                        Controller.hitboxMagnitude = 80
+                        Controller.hitboxMagnitude = 65
                         pcall(task.spawn, Controller.attack, Controller)
                         lastFireValid = tick()
                         continue
@@ -474,8 +504,4 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
-end 
--- Blox fruit source code lua
---[[
-    end 
-    ]]
+end
