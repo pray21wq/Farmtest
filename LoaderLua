@@ -327,17 +327,17 @@ task.spawn(function()
     local RigEvent = game:GetService("ReplicatedStorage").RigControllerEvent
     local Animation = Instance.new("Animation")
     local RecentlyFired = 0
-    local AttackCD = 0
+    local AttackCD = 0.01
     local Controller
     local lastFireValid = 0
-    local MaxLag = 350
-    fucker = 0.07
-    TryLag = 0
+    local MaxLag = 1000
+    fucker = 0.08
+    TryLag = 0.01
 
     local resetCD = function()
         local WeaponName = Controller.currentWeaponModel.Name
         local Cooldown = {
-            combat = 0.07
+            combat = 0.01
         }
         AttackCD = tick() + (fucker and Cooldown[WeaponName:lower()] or fucker or 0.285) + ((TryLag / MaxLag) * 0.3)
         RigEvent.FireServer(RigEvent, "weaponChange", WeaponName)
@@ -390,7 +390,7 @@ task.spawn(function()
                     end
                     if tick() - lastFireValid > 0.5 or not getgenv().Settings.FastAttack then
                         Controller.timeToNextAttack = 0
-                        Controller.hitboxMagnitude = 65
+                        Controller.hitboxMagnitude = 80
                         pcall(task.spawn, Controller.attack, Controller)
                         lastFireValid = tick()
                         continue
