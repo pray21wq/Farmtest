@@ -75,8 +75,8 @@ function checklevel()
         QuestName = "BuggyQuest1"
         QuestNumber = 2
         CFrameQuest = CFrame.new(-1138, 5, 3832)
-        CFrameMon = CFrame.new(-1387.5324707031, 24.592035293579, 4100.9575195313)
-        CFramePuk = CFrame.new(-1151, 44, 3874)
+        CFrameMon = CFrame.new(-1126, 22, 4321)
+        CFramePuk = CFrame.new(-1134, 99, 4314)
     elseif lv == 60 or lv <= 74 then
         Mon = "Desert Bandit [Lv. 60]"
         Title = "Desert Bandit"
